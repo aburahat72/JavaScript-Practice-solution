@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Local Storage Manager</title>
+  </head>
+  <body>
+    <h2>The Local Storage Manager runs in the browser console</h2>
+    <script>
+      let note1 = {
+        title: "Note 1",
+        content: "iam the engineer",
+        author: "abu rahat",
+        date: "01-01-2026",
+      };
+      let saveNote1 = JSON.stringify(note1);
+      localStorage.setItem("note1", saveNote1);
+      console.log(localStorage.getItem("note1"));
+    </script>
+  </body>
+</html>
