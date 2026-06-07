@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Machine</title>
+  </head>
+
+  <body>
+    <button id="Enter">Brew Coffee</button>
+
+    <script>
+      let coffeeType = "cappuccino";
+
+      document.querySelector("#Enter").addEventListener("click", () => {
+        brewCoffee(coffeeType);
+        console.log("Coffee order received");
+      });
+
+      async function brewCoffee(coffeeType) {
+        let randomDelay = Math.floor(Math.random() * 5000) + 1000;
+
+        let promise = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            alert(`Ready to serve the ${coffeeType}`);
+
+            resolve("Coffee is ready");
+          }, randomDelay);
+        });
+
+        let result = await promise;
+
+        console.log(result);
+      }
+    </script>
+  </body>
+</html>
